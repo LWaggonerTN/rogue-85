@@ -13,7 +13,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-flow: row wrap;
 	margin: 1em;
 }
 
@@ -24,17 +23,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-flow: row wrap;
-	margin: 0 auto;
-}
-
-header {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-flow: row wrap;
-	border-bottom: .187em solid #77a466;
-	margin: 0 auto;
 }
 
 h1,
@@ -60,11 +48,27 @@ h3 {
 p {
 	font-size: .875em;
 	line-height: 1.312em;
-    padding: 0 1.875em;
+}
+
+ul{
+	margin: 0;
+}
+
+header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+	border-bottom: .187em solid #77a466;
 }
 
 header h1 {
+	width: 100%;
+	text-align: center;
+	border-bottom: .19em solid #77a466;
 	margin: 0;
+	padding: 1em; 
 }
 
 header h1 span {
@@ -72,46 +76,36 @@ header h1 span {
 }
 
 header nav ul {
-	list-style-type: none;
-	line-height: 2em;
+	list-style: none;
+	/* line-height: 2em; */
 	margin: 0;
-	padding: 1em;
+	padding: 1em 0;
 }
 
 header nav ul li {
 	font-size: .875em;
 	font-weight: 700;
 	text-transform: uppercase;
-	padding: 0 .625em;
+	padding: .625em 0;
 }
 
 header nav ul li a{
 	color:#77a466;
 	text-decoration: none;
-	padding: 1em;
+	/* padding: .5 em; */
 }
 
 .top-section,
 .bottom-section {
-	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-flow: row wrap;
-	margin: 0;
-}
-
-.main-image {
-	width: 100%;
 }
 
 .main-image img {
 	width: 100%;
 	border-bottom: .188em solid #77a466;
-}
-
-.main-title {
-	height: auto;
 }
 
 .main-title h2 {
@@ -129,22 +123,8 @@ header nav ul li a{
 .section-one,
 .section-two,
 .section-three {
-	text-align: left;
 	width: 100%;
-	justify-content: center;
-	align-items: center;
-	flex-flow: row wrap;
 	border-top: .06em solid #eee;
-	border-bottom: .125em solid #eee;
-}
-
-.section-one h3 {
-	padding: .625em 0;
-}
-
-.section-two h3,
-.section-three h3 {
-	padding: .625em 0;
 }
 
 .menu {
@@ -161,22 +141,21 @@ header nav ul li a{
 	color: #333;
 	font-size: 1em;
 	line-height: 1.31em;
-	padding: 0;
 }
 
 .address {
 	font-size: 1em;
 	line-height: 1.5em;
-	padding: 0;
 }
 
 footer {
+	width: 100%;
 	text-align: center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-flow: row wrap;
-	margin: 0;
+	border-top: .125em solid #eee;
 }
 
 footer span {
@@ -188,58 +167,47 @@ footer span {
  
  /* *Media Queries* */
   
-@media (min-width: 768px) {
-	header ul {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-flow: row wrap;
-	}
-
-	header nav ul li a {
-		line-height: 2em;
-	}
-		
+@media only screen and (min-width: 768px) {
 	.bottom-section{
-		justify-content: center;
-		align-items: baseline;
-		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: flex-start;
 		border-top: .06em solid #eee;
-		border-bottom: .125em solid #eee;
-		margin: 1em;
 	}
 
-	.section-one, .section-three{
-		border: none;
+	.section-one, 
+	.section-two 
+	.section-three{
+		border-top: none;
+		flex-basis: 30%;
 	}
 
 	.section-two {
 		border-left: .06em solid #eee;
 		border-right: .06em solid #eee;
-		border-top: none;
-		padding: 1em;
-	}
-
-	.section-three {
-		margin-left: 1em;
+		padding: 0 1em;
 	}
 }
 
-@media (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
 	header {
-		display: flex;
 		justify-content: space-between;
 	}
 
 	header h1 {
-		margin: 0;
-		padding: 1.25em 0;
+		width: 30%;
+		text-align: left;
+		border-bottom: none;
+		padding: 0;
 	}
 
-	header ul {
-		line-height: 1em;
+	header nav {
+		width: 40%
 	}
+
+	header nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
 
 	.bottom-section{
 		align-items: baseline;
@@ -248,9 +216,10 @@ footer span {
 		border-bottom: .125em solid #eee;
 		margin: 1em;
 	}
-
+	
 	.section-one, .section-three{
 		border: none;
+		width: 33%;
 	}
 
 	.section-two {
@@ -258,6 +227,7 @@ footer span {
 		border-right: .06em solid #eee;
 		border-top: none;
 		padding: 1em;
+		width: 33%;
 	}
 
 	.section-three {
@@ -266,5 +236,5 @@ footer span {
 
 	footer {
 		border-top: none;
-	}
+	} 
 }
